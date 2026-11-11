@@ -1,0 +1,20 @@
+{
+  "name": "northgo-w3",
+  "type": "module",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.7.10",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
+    "typescript": "^5.8.3"
+  }
+}

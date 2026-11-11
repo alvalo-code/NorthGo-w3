@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/locations.css";
+---
+<BaseLayout
+  title="Northgo · 全球"
+  description="Northgo 全球據點世界地圖。七個辦公室都在這張地圖上。"
+  theme="locations"
+>
+  <a class="skip" href="#map-stage">Skip to map</a>
+  <div id="app"></div>
+  <noscript>需開啟 JavaScript 才能顯示全球據點地圖。</noscript>
+</BaseLayout>
+
+<script>
+  import { mountLocations } from "../components/LocationsMap";
+  mountLocations(document.getElementById("app")!);
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northgo 網站地圖</title>
+  <meta name="description" content="www.northgo.com 網站地圖。依選擇的語系顯示說明，並把連結指到該語系網址。">
+  <link rel="stylesheet" href="sitemap.css">
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search).get("lang");
+      var s = q;
+      try { s = s || localStorage.getItem("ng-sitemap-lang"); } catch (e) {}
+      var map = { en: "en", zh: "zh-Hant", ja: "ja", vi: "vi" };
+      if (map[s]) document.documentElement.lang = map[s];
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <noscript>需開啟 JavaScript，才能依語系顯示網站地圖。</noscript>
+  <script src="sitemap-data.js"></script>
+  <script>NG.mount("map", document.getElementById("app"));</script>
+</body>
+</html>

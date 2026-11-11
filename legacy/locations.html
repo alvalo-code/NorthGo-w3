@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northgo · 全球</title>
+  <meta name="description" content="Northgo 全球據點世界地圖。七個辦公室都在這張地圖上。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Outfit:wght@500;650;750&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="locations.css">
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search).get("lang");
+      var s = q;
+      try { s = s || localStorage.getItem("ng-sitemap-lang"); } catch (e) {}
+      var map = { en: "en", zh: "zh-Hant", ja: "ja", vi: "vi" };
+      if (map[s]) document.documentElement.lang = map[s];
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#map-stage">Skip to map</a>
+  <div id="app"></div>
+  <noscript>需開啟 JavaScript 才能顯示全球據點地圖。</noscript>
+  <script src="topojson-client.min.js"></script>
+  <script src="land-110m.js"></script>
+  <script src="locations.js"></script>
+</body>
+</html>

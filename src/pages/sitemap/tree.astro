@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/sitemap.css";
+---
+<BaseLayout
+  title="Northgo 樹狀網站地圖"
+  description="www.northgo.com 樹狀網站地圖。只列頁面階層與主要錨點。"
+  theme="sitemap"
+>
+  <div id="app"></div>
+  <noscript>需開啟 JavaScript，才能依語系顯示網站地圖。</noscript>
+</BaseLayout>
+
+<script>
+  import { mountSitemap } from "../../components/sitemapApp";
+  mountSitemap("tree", document.getElementById("app")!);
+</script>

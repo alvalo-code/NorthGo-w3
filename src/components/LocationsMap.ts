@@ -1,4 +1,5 @@
 import { withBase } from "../base";
+import { logoHtml } from "../logo";
 import { feature } from "topojson-client";
 import type { Topology } from "topojson-specification";
 import { offices, phoneLine, type Office } from "../data/offices";
@@ -192,7 +193,7 @@ function renderChrome(): void {
   const top = document.getElementById("topbar");
   if (top) {
     top.innerHTML =
-      `<a class="logo" href="https://www.northgo.com${currentLocale(lang).prefix || "/"}" rel="noopener">North<span>GO</span></a>` +
+      `${logoHtml(esc(`https://www.northgo.com${currentLocale(lang).prefix || "/"}`))}` +
       `<div class="top-actions">` +
       `<a class="chip" href="${withBase("/sitemap")}?lang=${lang}">${esc(t(locationsUi.sitemap, lang))}</a>` +
       `<a class="chip" href="${esc(contactHref(lang))}" rel="noopener" target="_blank">${esc(t(locationsUi.contact, lang))}</a>` +

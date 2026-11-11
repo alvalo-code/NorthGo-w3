@@ -8,6 +8,7 @@ import {
   type TreeNode,
 } from "../data/sitemap";
 import { withBase } from "../base";
+import { logoHtml } from "../logo";
 import {
   allPaths,
   bag,
@@ -73,7 +74,7 @@ function chrome(compact: boolean): string {
   return (
     `<a class="skip" href="#content">${esc(t(sitemapUi.skip, lang))}</a>` +
     `<header class="hero${compact ? " hero-compact" : ""}"><div class="wrap">` +
-    `<div class="brand"><a class="logo" href="${esc(siteUrl("/", undefined, prefix))}">North<span>GO</span></a>` +
+    `<div class="brand">${logoHtml(esc(siteUrl("/", undefined, prefix)))}` +
     `<div class="meta-note">${esc(t(sitemapUi.date, lang))}</div></div>` +
     `<h1>${esc(t(h1, lang))}<br><em>${esc(t(sitemapUi.tagline, lang))}</em></h1>` +
     `<p class="lede">${esc(t(lede, lang))}</p>` +

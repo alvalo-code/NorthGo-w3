@@ -59,14 +59,16 @@ a:hover { text-decoration: underline; }
   z-index: 5;
 }
 .logo {
-  font-family: var(--font-display);
-  font-weight: 750;
-  letter-spacing: -0.04em;
-  font-size: 1.2rem;
-  color: var(--office);
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
   text-decoration: none;
 }
-.logo span { color: #fff; }
+.logo img {
+  height: 1.7rem;
+  width: auto;
+  display: block;
+}
 .top-actions {
   display: flex;
   flex-wrap: wrap;

@@ -64,13 +64,16 @@ a:hover { color: var(--cyan-deep); }
   margin-bottom: 1.6rem;
 }
 .logo {
-  font-weight: 750;
-  letter-spacing: -0.04em;
-  font-size: 1.45rem;
-  color: var(--cyan);
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
   text-decoration: none;
 }
-.logo span { color: #fff; }
+.logo img {
+  height: 2.05rem;
+  width: auto;
+  display: block;
+}
 .meta-note { color: #c9d6e8; font-size: 0.92rem; }
 h1 {
   margin: 0 0 0.45rem;

@@ -7,6 +7,7 @@ import {
   type Card,
   type TreeNode,
 } from "../data/sitemap";
+import { withBase } from "../base";
 import {
   allPaths,
   bag,
@@ -39,11 +40,6 @@ function langsHtml(): string {
     })
     .join("");
   return `<div class="langs" role="radiogroup" aria-label="${esc(t(sitemapUi.langLabel, lang))}">${buttons}</div>`;
-}
-
-function withBase(path: string): string {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
 function viewsHtml(): string {

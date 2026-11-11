@@ -1,3 +1,4 @@
 ---
-return Astro.redirect(`${import.meta.env.BASE_URL}sitemap`.replace(/\/{2,}/g, "/"));
+import { withBase } from "../base";
+return Astro.redirect(withBase("/sitemap"));
 ---

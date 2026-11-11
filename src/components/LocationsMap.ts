@@ -1,3 +1,4 @@
+import { withBase } from "../base";
 import { feature } from "topojson-client";
 import type { Topology } from "topojson-specification";
 import { offices, phoneLine, type Office } from "../data/offices";
@@ -193,7 +194,7 @@ function renderChrome(): void {
     top.innerHTML =
       `<a class="logo" href="https://www.northgo.com${currentLocale(lang).prefix || "/"}" rel="noopener">North<span>GO</span></a>` +
       `<div class="top-actions">` +
-      `<a class="chip" href="${import.meta.env.BASE_URL.replace(/\/$/, "")}/sitemap?lang=${lang}">${esc(t(locationsUi.sitemap, lang))}</a>` +
+      `<a class="chip" href="${withBase("/sitemap")}?lang=${lang}">${esc(t(locationsUi.sitemap, lang))}</a>` +
       `<a class="chip" href="${esc(contactHref(lang))}" rel="noopener" target="_blank">${esc(t(locationsUi.contact, lang))}</a>` +
       langHtml +
       `</div>`;
@@ -345,7 +346,7 @@ function clearMapError(): void {
 
 async function loadLand(): Promise<void> {
   try {
-    const res = await fetch(`${import.meta.env.BASE_URL}land-110m.json`);
+    const res = await fetch(withBase("/land-110m.json"));
     if (!res.ok) throw new Error(`land fetch ${res.status}`);
     const topology = (await res.json()) as Topology<{ land: GeoJSON.MultiPolygon }>;
     if (!topology.objects?.land) throw new Error("land topology missing");
